@@ -11,6 +11,7 @@ import java.util.List;
 // if @RequestParam then the param tab has to have the value
 // if @RequestBody then pass json obj, write in body tab
 // if @PathVariable then pass in the URL
+//test
 
 @RestController
 @RequestMapping("/api/drugs")
