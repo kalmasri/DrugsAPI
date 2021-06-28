@@ -3,6 +3,7 @@ package com.siscomp.sbootartifact.controller;
 import com.fasterxml.jackson.datatype.jsr310.ser.YearSerializer;
 import com.siscomp.sbootartifact.model.Drug;
 import com.siscomp.sbootartifact.service.DrugService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +21,8 @@ public class DrugController {
     @Autowired
     DrugService drugService;
 
+    //jdk 11 has more ex: String like "strip, strip leading, file ops, strip" lambda"
+
     @PostMapping
     public Drug saveDrug(@RequestBody Drug drug){
         return drugService.saveDrug(drug);
@@ -27,6 +30,7 @@ public class DrugController {
 
     // this is not optional must provide an id so use PathVariable, otherwise use repsose param
     // id is same as pathvariable
+    @ApiOperation(value = "Get drug by id")
     @GetMapping("/{id}")
     public Drug getDrugById(@PathVariable  String id){
         return drugService.findDrugByID(id);
@@ -54,6 +58,7 @@ public class DrugController {
     }
 
     // Get and search by other params
+    @ApiOperation(value = "Get all drugs")
     @GetMapping("/all")
     public List<Drug> getAllDrugs(){
         return drugService.findAllDrugs();
