@@ -38,8 +38,10 @@ public class DrugService {
 
     //same as saveDrug but will be used for the PUT
     public Drug updateDrug(Drug drug) {
+//        if(drug != null) {
+//            String name = drug.getName();
+//        }
         return drugRepository.save(drug);
-
     }
 
     public List<Drug> findAllDrugs() {
