@@ -33,6 +33,7 @@ public class DrugService {
         Drug d = drugRepository.findById(id).orElse(null);
         d.setName(drug.getName());
         d.setDose(drug.getDose());
+        d.setTimeStamp(drug.getTimeStamp());
         return drugRepository.save(d);
     }
 
