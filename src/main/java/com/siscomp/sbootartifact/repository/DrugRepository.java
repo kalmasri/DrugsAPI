@@ -22,4 +22,7 @@ public interface DrugRepository extends MongoRepository<Drug,String> {
 
     List<Drug> findByNameAndDose(String name, String dose);
 
+//    List<Drug> findByNameOrDosesss(String name, String dose);
+
+
 }
